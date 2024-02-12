@@ -9,7 +9,7 @@ class SortingAlgorithms:
             # iterate through every single element after the current minimum index
             for innerIndex in range(currentIndex + 1, len(arr) - 1):
                 # if the inner index is less than, capture it
-                if currentMinimumIndex < innerIndex:
+                if arr[currentMinimumIndex] < arr[innerIndex]:
                     currentMinimumIndex = innerIndex
 
             # once you are done capturing both indexes, do a swap
