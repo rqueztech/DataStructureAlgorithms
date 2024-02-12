@@ -4,7 +4,10 @@ import generaterandomarray
 
 def main():
     randomarray = generaterandomarray.generate_random_array(400,1,2000)
-    sortingalgorithms.SortingAlgorithms.selectionSort(randomarray)
+    #sortingarray = sortingalgorithms.SortingAlgorithms.selectionSort(randomarray)
+    insertionarray = sortingalgorithms.SortingAlgorithms.insertionSort(randomarray)
+
+    print(insertionarray)
 
     currentvalue = int(input("Enter Value: "))
     indexfound = binarysearch.binary_search(currentvalue)

@@ -1,7 +1,23 @@
 class SortingAlgorithms:
     # set the class for the insertion sort
     def insertionSort(arr):
-        print(arr)
+        # iterate through the entire array
+        for currentIndex in range(0,len(arr)):
+            # capture your current key
+            key = arr[currentIndex]
+            
+            # capture the value previous to the currentIndex
+            decreasingIndex = currentIndex - 1
+
+            # create a while loop to iterate down until greater than -1]
+            while decreasingIndex > -1 and key < arr[decreasingIndex]:
+                arr[decreasingIndex + 1] = arr[decreasingIndex]
+                decreasingIndex = decreasingIndex - 1
+
+            arr[decreasingIndex + 1] = key
+
+        return arr
+
 
     # set the class for the selection sort
     def selectionSort(arr):
