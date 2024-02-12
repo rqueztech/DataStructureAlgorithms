@@ -7,14 +7,14 @@ class SortingAlgorithms:
             currentMinimumIndex = currentIndex
 
             # iterate through every single element after the current minimum index
-            for innerIndex in range(currentIndex + 1, len(arr) - 1):
+            for innerIndex in range(currentMinimumIndex + 1, len(arr) - 1):
                 # if the inner index is less than, capture it
                 if arr[currentMinimumIndex] < arr[innerIndex]:
                     currentMinimumIndex = innerIndex
 
             # once you are done capturing both indexes, do a swap
             swap = arr[currentMinimumIndex]
-            arr[currentMinimumIndex] = arr[innerIndex]
-            arr[innerIndex] = swap
+            arr[currentMinimumIndex] = arr[currentIndex]
+            arr[currentIndex] = swap
 
         print(arr)
