@@ -1,5 +1,5 @@
 def binary_search(key):
-    arraylist= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    arraylist= [2, 3, 4, 5, 6, 7, 8, 9, 10,
         11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
         31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
@@ -51,5 +51,22 @@ def binary_search(key):
         491, 492, 493, 494, 495, 496, 497, 498, 499, 500,
         501, 502, 503
     ]
+    
+    # set the low and the high values
+    low = 0
+    high = len(arraylist) - 1
+    
+    # keep going while the low value is less than or equal to the high value
+    while low <= high:
+        # set the mid value on this iteration
+        mid = low + (high - low)//2
+        
+        # check if key is equal to the value at the mid value index
+        if arraylist[mid] == key:
+            return mid + 1
 
-    print(arraylist)
+        elif arraylist[mid] < key:
+            low = mid + 1
+            
+        else:
+            high = mid - 1
