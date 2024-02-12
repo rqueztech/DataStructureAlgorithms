@@ -16,6 +16,9 @@ class SortingAlgorithms:
 
             arr[decreasingIndex + 1] = key
 
+        print("\nExplanation: Insertion Sort. Time complexity: o(n^2):\n\n")
+        print(arr)
+
         return arr
 
 
@@ -37,6 +40,8 @@ class SortingAlgorithms:
             arr[currentMinimumIndex] = arr[currentIndex]
             arr[currentIndex] = swap
 
+        print("\nExplanation: Time complexity of selection sort: o(n^2). Why is this? because you are iterating thorugh the array again within an iteration. when you do this, the time complexity is exponential because for every iteration. This is one of the worse time complexities, hence completely unideal for real world use, maybe limited cases.\n\n")
+
         print(arr)
 
-        print("\nExplanation: Time complexity of selection sort: o(n^2). Why is this? because you are iterating thorugh the array again within an iteration. when you do this, the time complexity is exponential because for every iteration. This is one of the worse time complexities, hence completely unideal for real world use, maybe limited cases.")
+        return arr
