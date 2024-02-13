@@ -6,7 +6,7 @@ import copy
 def compare_memory_addresses(randomarray, sortingarray, insertionarray):
     areunique = False
 
-    if randomarray is not sortingarray or sortingarray is not insertionarray:
+    if randomarray is not sortingarray and sortingarray is not insertionarray:
         areunique = True
 
     else:
@@ -15,16 +15,21 @@ def compare_memory_addresses(randomarray, sortingarray, insertionarray):
     return areunique
 
 def main():
-    randomarray = generaterandomarray.generate_random_array(400,1,2000)
-    sortingarray = sortingalgorithms.SortingAlgorithms.selectionSort(copy.deepcopy(randomarray))
-    insertionarray = sortingalgorithms.SortingAlgorithms.insertionSort(copy.deepcopy(randomarray))
+    while 1:
+        option = input("Enter Operation: ")
+        randomarray = generaterandomarray.generate_random_array(400,1,3001)
 
-    currentvalue = int(input("Enter Value: "))
-    indexfound = binarysearch.binary_search(currentvalue)
+        if option == '1':
+            print("\nselectionSort()")
+            sortingarray = sortingalgorithms.SortingAlgorithms.selectionSort(copy.deepcopy(randomarray))
 
-    areunique = compare_memory_addresses(randomarray, sortingarray, insertionarray)
+        elif option == '2':
+            print("\ninsertionSort()")
+            insertionarray = sortingalgorithms.SortingAlgorithms.insertionSort(copy.deepcopy(randomarray))
 
-    print(areunique)
+        elif option == '3':
+            bubblearray = sortingalgorithms.SortingAlgorithms.bubbleSort(copy.deepcopy(randomarray))
+            print("\nbubbleSort()")
 
     return 0
 
